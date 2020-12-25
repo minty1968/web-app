@@ -1,0 +1,101 @@
+{% extends "base/base.html" %}
+
+{% block content %}
+
+<div class="w3-container w3-teal">
+<h1>Lottery Draw Area</h1>
+<div class="container-fluid" style="min-height:100%">
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-warning alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+</div>
+</div>
+
+<div class="w3-row-padding w3-margin-top">
+
+  <div class="w3-third">
+    <div class="w3-card">
+      <form action="{{ url_for('lottery.lotto') }}" method="POST"
+        <input type="hidden" name="draw_type" value="lotto">
+        <div class="w3-container w3-center">
+          <img src="{{url_for('static', filename='lotto_large.png')}}" style="width:100%">
+          <h4><button class="w3-button w3-teal w3-ripple" type="submit"> View </button></h4>
+        </div>  <!-- End  class="w3-container"  -->
+      </form>
+    </div>  <!-- End class="w3-card" -->
+  </div>  <!-- End class="w3-third"  -->
+
+  <div class="w3-third">
+    <div class="w3-card">
+      <form action="{{ url_for('lottery.s4l') }}" method="POST"
+        <input type="hidden" name="draw_type" value="lotto">
+        <div class="w3-container w3-center">
+          <img src="{{url_for('static', filename='s4l_large.jfif')}}" style="width:100%">
+          <h4><button class="w3-button w3-teal w3-ripple" type="submit"> View </button></h4>
+        </div>  <!-- End  class="w3-container"  -->
+      </form>
+    </div>  <!-- End class="w3-card" -->
+  </div>  <!-- End class="w3-third"  -->
+
+  <div class="w3-third">
+    <div class="w3-card">
+      <form action="{{ url_for('lottery.euro') }}" method="POST"
+        <input type="hidden" name="draw_type" value="lotto">
+        <div class="w3-container w3-center">
+          <img src="{{url_for('static', filename='euromillions_large.jfif')}}" style="width:100%">
+          <h4><button class="w3-button w3-teal w3-ripple" type="submit"> View </button></h4>
+        </div>  <!-- End  class="w3-container"  -->
+      </form>
+    </div>  <!-- End class="w3-card" -->
+  </div>  <!-- End class="w3-third"  -->
+</div>  <!-- End class="w3-row-padding w3-margin-top" -->
+
+<div class="w3-row-padding w3-margin-top">
+  <div class="w3-third">
+    <div class="w3-card">
+      <form action="{{ url_for('lottery.thunder') }}" method="POST"
+        <input type="hidden" name="draw_type" value="lotto">
+        <div class="w3-container w3-center">
+          <img src="{{url_for('static', filename='thunderball_large.jfif')}}" style="width:100%">
+          <h4><button class="w3-button w3-teal w3-ripple" type="submit"> View </button></h4>
+        </div>  <!-- End  class="w3-container"  -->
+      </form>
+    </div>  <!-- End class="w3-card" -->
+  </div>  <!-- End class="w3-third"  -->
+
+  <div class="w3-third">
+    <div class="w3-card">
+      <form action="{{ url_for('lottery.euro_hp') }}" method="POST"
+        <input type="hidden" name="draw_type" value="lotto">
+        <div class="w3-container w3-center">
+          <img src="{{url_for('static', filename='euromillions-hotpicks_large.jfif')}}" style="width:100%">
+          <h4><button class="w3-button w3-teal w3-ripple" type="submit"> View </button></h4>
+        </div>  <!-- End  class="w3-container"  -->
+      </form>
+    </div>  <!-- End class="w3-card" -->
+  </div>  <!-- End class="w3-third"  -->
+
+  <div class="w3-third">
+    <div class="w3-card">
+      <form action="{{ url_for('lottery.lotto_hp') }}" method="POST"
+        <input type="hidden" name="draw_type" value="lotto">
+        <div class="w3-container w3-center">
+          <img src="{{url_for('static', filename='lottoHP_large.jfif')}}" style="width:100%">
+          <h4><button class="w3-button w3-teal w3-ripple" type="submit"> View </button></h4>
+        </div>  <!-- End  class="w3-container"  -->
+      </form>
+    </div>  <!-- End class="w3-card" -->
+  </div>  <!-- End class="w3-third"  -->
+
+</div>  <!-- End class="w3-row-padding w3-margin-top" -->
+
+{% endblock %}

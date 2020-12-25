@@ -1,0 +1,24 @@
+<!--  base.html  -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% include 'base/meta.html' %}
+  {% include 'base/styles.html' %}
+</head>
+
+<body>
+  {% include 'base/nav.html' %}
+
+  <div class="w3-container w3-content w3-center w3-padding-32" style="max-width:2000px; margin-top:46px">
+    {% block content %}
+    <!-- Content goes here -->
+    {% endblock %}
+  </div>
+
+  <!-- Scripts -->
+  {% include 'base/scripts.html' %}
+  {% include 'base/footer.html' %}
+</body>
+
+</html>

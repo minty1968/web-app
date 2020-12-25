@@ -1,0 +1,119 @@
+{% block nav %}
+<!-- Navigation (Stays on Top) Responsive-->
+<nav class="w3-top w3-bar w3-theme">
+  <!--  Home Button  -->
+  <div class="w3-container w3-bar-item w3-button w3-mobile">
+    <a href="{{ url_for('base.home') }}" class="w3-container w3-theme w3-large w3-bar-item w3-button w3-mobile">Home</a>
+  </div>  <!-- End  -->
+  <!--  Lottery Draw Main Button  -->
+  <div class="w3-container w3-bar-item w3-button w3-mobile">
+    <a href="{{ url_for('lottery.lottoIndex') }}" class="w3-container w3-theme w3-large w3-bar-item w3-button w3-mobile">Lottery Draws</a>
+  </div>  <!-- End  -->
+  <!--  Password Generator Button  -->
+  <div class="w3-container w3-bar-item w3-button w3-mobile">
+    <a href="{{ url_for('password.passwd')}}" class="w3-container w3-theme w3-large w3-bar-item w3-button w3-mobile">Pasword Generator</a>
+  </div>  <!-- End  -->
+  <!--  Contact Button which displays Modal Contact Form -->
+  <div class="w3-container w3-bar-item w3-button w3-mobile">
+    <button onclick="document.getElementById('id03').style.display='block'" class="w3-button w3-theme w3-large">Contact Us</button>
+    <div id="id03" class="w3-modal">
+      <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+        <form action="" class="w3-container w3-card-4 w3-light-grey w3-text-teal w3-margin">
+          <h2 class="w3-center">Contact Us</h2>
+          <div class="w3-row w3-section">
+            <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-user"></i></div>
+            <div class="w3-rest">
+              <input class="w3-input w3-border" name="first" type="text" placeholder="First Name">
+            </div>  <!-- End class="w3-rest" -->
+          </div>  <!-- End class="w3-row w3-section" -->
+          <div class="w3-row w3-section">
+            <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-user"></i></div>
+            <div class="w3-rest">
+              <input class="w3-input w3-border" name="last" type="text" placeholder="Last Name">
+            </div>  <!-- End class="w3-rest" -->
+          </div>  <!-- End class="w3-row w3-section" -->
+          <div class="w3-row w3-section">
+            <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-envelope-o"></i></div>
+            <div class="w3-rest">
+              <input class="w3-input w3-border" name="email" type="text" placeholder="Email">
+            </div>  <!-- End class="w3-rest" -->
+          </div>  <!-- End class="w3-row w3-section" -->
+          <div class="w3-row w3-section">
+            <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-phone"></i></div>
+            <div class="w3-rest">
+              <input class="w3-input w3-border" name="phone" type="text" placeholder="Phone">
+            </div>  <!-- End class="w3-rest" -->
+          </div>  <!-- End class="w3-row w3-section" -->
+          <div class="w3-row w3-section">
+            <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-pencil"></i></div>
+            <div class="w3-rest">
+              <input class="w3-input w3-border" name="message" type="text" placeholder="Message">
+            </div>  <!-- End class="w3-rest" -->
+          </div>  <!-- End class="w3-row w3-section" -->
+          <p class="w3-center">
+            <button class="w3-button w3-section w3-teal w3-ripple"> Send </button>
+          </p>  <!-- End  class="w3-center" -->
+        </form>
+        <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+          <button onclick="document.getElementById('id03').style.display='none'" type="button" class="w3-button w3-red">Cancel</button>
+        </div>  <!-- End class="w3-container -->
+      </div>  <!-- End class="w3-modal-content -->
+    </div>  <!-- End id="id01" -->
+  </div>  <!-- End class="w3-container" -->
+  <!-- Login Button which displays Login Modal form -->
+  <div class="w3-container w3-right w3-bar-item w3-button w3-mobile">
+    <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-theme w3-large">Login</button>
+    <div id="id01" class="w3-modal">
+      <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+        <div class="w3-center"><br>
+          <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
+          <img src="{{url_for('static', filename='img_avatar_male.png')}}" alt="Avatar", style="width:30%" class="w3-circle w3-margin-top">
+        </div>  <!-- End class="w3-center" -->
+        <form class="w3-container" action="">
+          <div class="w3-section w3-text-black">
+            <label><b>Email</b></label>
+            <input class="w3-input w3-border w3-margin-bottom" type="email" placeholder="Enter Email Address" name="email" minlength="5" required>
+            <label><b>Password</b></label>
+            <input class="w3-input w3-border" type="password" placeholder="Enter Password" name="pswd" minlength="5" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+            <button class="w3-button w3-block w3-green w3-section w3-padding" type="submit">Login</button>
+            <input class="w3-check w3-margin-top" type="checkbox" checked="checked"> Remember me
+          </div>  <!-- End class="w3-section" -->
+        </form>
+        <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+          <button onclick="document.getElementById('id01').style.display='none'" type="button" class="w3-button w3-red">Cancel</button>
+          <span class="w3-right w3-padding w3-hide-small">Forgot <a href="#">password?</a></span>
+        </div>  <!-- End class="w3-container -->
+      </div>  <!-- End class="w3-modal-content -->
+    </div>  <!-- End id="id01" -->
+  </div>  <!-- End class="w3-container" -->
+
+  <div class="w3-container w3-right w3-bar-item w3-button w3-mobile">
+    <button onclick="document.getElementById('id02').style.display='block'" class="w3-button w3-theme w3-large">Register</button>
+    <div id="id02" class="w3-modal">
+      <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+        <div class="w3-center"><br>
+          <span onclick="document.getElementById('id02').style.display='none'" class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
+          <img src="{{url_for('static', filename='img_avatar_female.png')}}" alt="Avatar", style="width:30%" class="w3-circle w3-margin-top">
+        </div>  <!-- End class="w3-center" -->
+        <form class="w3-container" action="">
+          <div class="w3-section w3-text-black">
+            <label><b>Email</b></label>
+            <input class="w3-input w3-border w3-margin-bottom" type="email" placeholder="Enter Email Address" name="email" minlength="5" required>
+            <label><b>Password</b></label>
+            <input class="w3-input w3-border" type="password" placeholder="Enter Password" name="pswd" minlength="5" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+            <label><b>Repeat Password</b></label>
+            <input class="w3-input w3-border" type="password" placeholder="Repeat Password" name="repeatpswd" minlength="8" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+            <button class="w3-button w3-block w3-green w3-section w3-padding" type="submit">Register</button>
+            <input class="w3-check w3-margin-top" type="checkbox" checked="checked"> Remember me
+          </div>  <!-- End class="w3-section -->
+        </form>
+        <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+          <button onclick="document.getElementById('id02').style.display='none'" type="button" class="w3-button w3-red">Cancel</button>
+        </div>  <!-- End class="w3-container -->
+
+      </div>  <!-- End class="w3-modal-content -->
+    </div>  <!-- End id="id01" -->
+  </div>  <!-- End class="w3-container" -->
+</nav>
+
+{% endblock %}

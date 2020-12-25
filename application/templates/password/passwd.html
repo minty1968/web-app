@@ -1,0 +1,55 @@
+{% extends "base/base.html" %}
+
+{% block content %}
+
+<form action="{{ url_for('password.passwd') }}" name="PasswdForm" method="POST">
+  <div class="w3-row w3-section">
+    <h2 class="w3-center">{{ body }}</h2>
+  </div>
+
+  <div class="w3-row">
+    <fieldset>
+      <legend class="w3-text-teal">Password Type</legend>
+      <p>
+        <span>
+        <input class="w3-radio" type="radio" id="words" name="passType" value="words">
+        <label for="words">  Random Words </label>
+        <input class="w3-radio" type="radio" id="random" name="passType" value="random" checked="checked">
+        <label for="random"> Random Characters </label>
+        </span>
+      </p>
+    </fieldset>
+    <br><br>
+    <fieldset>
+      <legend class="w3-text-teal">Password Complexity</legend>
+      <p>
+        <span>
+        <input class="w3-radio" type="radio" id="easy" name="complex" value="easy">
+        <label for="easy">  Easy </label>
+        <input class="w3-radio" type="radio" id="medium" name="complex" value="medium">
+        <label for="medium"> Medium </label>
+        <input class="w3-radio" type="radio" id="hard" name="complex" value="hard" checked="checked">
+        <label for="hard">  Hard </label>
+        </span>
+      </p>
+    </fieldset>
+  </div>  <!-- End class="w3-row"  -->
+
+  <br><br>
+  <div class="w3-card">
+    <fieldset>
+      <legend>Generated Password</legend>
+      <p>
+        <label for="passwd" class="w3-text-teal"><strong> {{ password }} </strong></label><br>
+      </p>
+    </fieldset>
+  </div>  <!-- End class="w3-card" -->
+
+
+  <p class="w3-center">
+    <button class="w3-button w3-section w3-teal w3-ripple" type="submit"> Send </button>
+  </p>
+
+</form>
+
+{% endblock %}
